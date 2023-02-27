@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Job
+from .models import JobPost
 
 
 # Create your views here.
 def index(request):
-    data = Job.objects.all()
+    data = JobPost.objects.all()
     context = {
         "jobs": data,
     }
@@ -12,7 +12,7 @@ def index(request):
 
 
 def detailView(request, id):
-    data = Job.objects.get(id=id)
+    data = JobPost.objects.get(id=id)
     context = {
         "jobs": data,
     }
